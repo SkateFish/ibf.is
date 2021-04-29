@@ -16,7 +16,7 @@
   padding: 40px 18px;
   width: 100%;
   display: block;
-  
+
   @include respond-to(lg) {
     min-height: 315px;
     margin-left: auto;
@@ -25,7 +25,6 @@
     position: relative;
     width: 50%;
   }
-
 
   &::after {
     display: none;
@@ -40,8 +39,8 @@
 
     @include respond-to(lg) {
       display: block;
-      width: 140px; 
-      height: 140px; 
+      width: 140px;
+      height: 140px;
     }
   }
 }
@@ -59,12 +58,11 @@
     left: 0;
     top: 0;
   }
-  
+
   @include respond-to(lg) {
     width: calc(100% - 137px);
     padding-bottom: 65%;
   }
-
 
   &::before {
     background: $white;

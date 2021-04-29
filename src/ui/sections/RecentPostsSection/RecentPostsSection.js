@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./RecentPostsSection.module.scss";
 import PostCard from "src/ui/components/PostCard";
-import FeaturedPostCard from 'src/ui/components/FeaturedPostCard'
+import FeaturedPostCard from "src/ui/components/FeaturedPostCard";
 import { truncateText } from "src/utility/helpers/truncateText";
 
 const RecentPostsSection = ({ posts: _posts, maxPosts = 5 }) => {
@@ -19,7 +19,7 @@ const RecentPostsSection = ({ posts: _posts, maxPosts = 5 }) => {
           .slice(0, 1)
           .map(post => (
             <FeaturedPostCard
-              key={post.title}
+              key={post.url}
               title={post.title}
               text={truncateText.apply(post.text)}
               imageUrl={post.image}
@@ -30,15 +30,17 @@ const RecentPostsSection = ({ posts: _posts, maxPosts = 5 }) => {
           ))}
       </div>
       <div className={styles.posts}>
-        {posts.filter(post => !post.isFeatured).map(post => (
-          <PostCard
-            key={post.title}
-            title={post.title}
-            text={truncateText.apply(post.text)}
-            date={post.date}
-            url={post.url}
-          />
-        ))}
+        {posts
+          .filter(post => !post.isFeatured)
+          .map(post => (
+            <PostCard
+              key={post.url}
+              title={post.title}
+              text={truncateText.apply(post.text)}
+              date={post.date}
+              url={post.url}
+            />
+          ))}
       </div>
     </div>
   );

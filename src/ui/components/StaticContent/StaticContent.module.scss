@@ -1,0 +1,35 @@
+@import "src/utility/variables";
+@import "src/utility/responsive";
+@import "src/utility/content";
+
+.content {
+  @extend .content;
+}
+
+.root {
+  position: relative;
+  background: $white;
+  box-shadow: 0 21px 28px 0 rgba(201, 201, 201, 0.5);
+  max-width: $md;
+  margin: auto;
+
+  @include respond-to(md) {
+    padding: $ms4;
+    flex: 0 1 50%;
+    &::after {
+      content: "";
+      background: url("src/images/dots-decorator.svg") no-repeat;
+      position: absolute;
+      width: 9.3rem;
+      height: 9.3rem;
+      z-index: -1;
+      right: 0;
+      transform: translateX(-50%) translateY(50%);
+      bottom: 0;
+    }
+  }
+}
+
+.title {
+  margin-bottom: $ms3;
+}

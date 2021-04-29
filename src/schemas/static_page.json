@@ -1,0 +1,33 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "UID"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title",
+        "labels": ["indent-1", "indent-2", "indent-3"]
+      }
+    },
+    "background_text": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Background Text"
+      }
+    },
+    "text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+        "allowTargetBlank": true,
+        "label": "Text"
+      }
+    }
+  }
+}
